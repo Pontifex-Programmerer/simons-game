@@ -1,0 +1,100 @@
+body {
+    --text-color: #353535;
+    --dark-bg: #284B63;
+    --white: #FFFFFF;
+    --light-bg: #D9D9D9;
+    --caribbean: #3C6E71;
+
+    --tile1: #F3CA40;
+    --tile2: #88A2AA;
+    --tile3: #F08A4B;
+    --tile4: #76D694;
+
+    background-color: var(--text-color);
+}
+
+.content_wrapper {
+    column-gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, 10em);
+    margin: 5rem auto;
+    width: fit-content;
+}
+.tile {
+    cursor: crosshair;
+    height: 10rem;
+    width: 10rem;
+}
+
+.success {
+    background-color: var(--tile4);
+}
+
+#action-button {
+    background-color: var(--white);
+    border: solid 2px var(--dark-bg);
+    color: var(--dark-bg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    grid-column: 1 / span 2;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+   
+}
+
+.border {
+    border: solid 2px;
+}
+
+#action-button:hover {
+    cursor: pointer;
+    background-color: var(--light-bg);
+    color: var(--caribbean);
+}
+
+.active-border {
+    border-color: var(--white);
+}
+
+/*each tile have its background and border set to the same color
+when a mouseclick is registered, the tile applies the :active pseudo class
+and then the border is set to match the background to create 'sink-in/shrink'
+effect*/
+
+.yellow {
+    background-color: var(--tile1);
+    border-color: var(--tile1);
+}
+.blue {
+    background-color: var(--tile2);
+    border-color: var(--tile2);
+}
+.red {
+    background-color: var(--tile3);
+    border-color: var(--tile3);
+}
+.green {
+    background-color: var(--tile4);
+    border-color: var(--tile4);
+}
+
+.yellow:active,
+.blue:active,
+.green:active,
+.red:active {
+    border-color: var(--white);
+}
+.invisible {
+    display: none;
+}
+
+
+#game-over {
+    position: absolute;
+    margin: 4em;
+    border-radius: 10px;
+    padding: 0.5em 1em;    
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+}
